@@ -95,7 +95,6 @@ const BookDetailModal: React.FC<BookDetailModalProps> = ({ isOpen, onClose, book
                     key={`${rec.title}-${index}`}
                     book={rec}
                     onBuyNow={onBuyNow}
-                    // FIX: Renamed 'onQuickView' to 'onViewDetails' to match the props of BookCard.
                     onViewDetails={onViewDetails}
                   />
                 ))}
