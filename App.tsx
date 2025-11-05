@@ -63,10 +63,6 @@ const App: React.FC = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        // Update hash to reflect view changes, except for admin to keep it private
-        if(view !== 'admin' && view !== 'bookDetail'){
-             window.location.hash = view;
-        }
     }, [view]);
 
     const handleNavigate = (newView: View) => {
