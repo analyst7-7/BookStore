@@ -1,6 +1,6 @@
-// Created types for the application
+// Fix: Provide full content for types.ts
 export interface Book {
-  id: number;
+  id: string;
   title: string;
   author: string;
   price: number;
@@ -10,37 +10,30 @@ export interface Book {
   tagline: string;
   language: string;
   publisher: string;
-  isFeatured?: boolean;
+  isFeatured: boolean;
 }
 
 export interface Category {
   id: string;
   name: string;
-  image: string;
 }
 
 export interface Order {
   id: string;
+  bookId: string;
+  bookTitle: string;
   customerName: string;
   phone: string;
   address: string;
-  bookTitle: string;
-  bookId: number;
-  status: 'ডেলিভারি হয়েছে' | 'প্রক্রিয়াধীন' | 'বাতিল হয়েছে';
   date: string;
-}
-
-export type View = 'home' | 'allBooks' | 'bookDetail' | 'contact' | 'privacy' | 'admin';
-
-export interface ContactInfo {
-    addressLines: string[];
-    email: string;
-    phone: string;
-    hours: string;
+  status: 'Pending' | 'Shipped' | 'Delivered' | 'Cancelled';
 }
 
 export interface PrivacyPolicyContent {
+  title: string;
+  lastUpdated: string;
+  sections: {
     title: string;
-    lastUpdated: string;
-    sections: { title: string; content: string }[];
+    content: string;
+  }[];
 }
